@@ -239,6 +239,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealElements.forEach((element) => revealObserver.observe(element));
 
+  /* ========== MOBILE SCROLL HINT (hero → services) ========== */
+  const scrollHint = document.querySelector(".hero-scroll-hint");
+  const heroSection = document.querySelector(".hero");
+
+  if (scrollHint && heroSection) {
+    const updateScrollHint = () => {
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      const shouldHide = heroBottom < window.innerHeight * 0.35 || window.scrollY > 80;
+      scrollHint.classList.toggle("is-hidden", shouldHide);
+    };
+
+    scrollHint.addEventListener("click", () => {
+      scrollHint.classList.add("is-hidden");
+    });
+
+    window.addEventListener("scroll", updateScrollHint, { passive: true });
+    window.addEventListener("resize", updateScrollHint);
+    updateScrollHint();
+  }
+
   /* Initialize background audio after page load */
   /* Place your track in the audios/ folder (same filename or edit this path). */
   veinStudio.initBackgroundAudio("audios/DAYTO.mp3", 5000);
