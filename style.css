@@ -1541,30 +1541,51 @@ h1 {
   }
 
   .hero {
-    min-height: 88vh;
-    padding: 1.5rem 1rem 2rem;
+    min-height: unset;
+    height: clamp(220px, 40svh, 300px);
+    max-height: 40svh;
+    padding: 0.5rem 1rem 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(192, 192, 192, 0)),
       url('background_images/background.png') center top / 100% auto no-repeat,
       #07070a;
   }
 
-  .hero-contact .button {
-    padding: 0.7rem 1.25rem;
-    font-size: 0.85rem;
+  .hero-contact {
+    position: absolute;
+    left: 50%;
+    top: 44%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    margin: 0;
     width: auto;
-    max-width: min(92vw, 280px);
+  }
+
+  .hero-contact .button {
+    padding: 0.55rem 1rem;
+    font-size: 0.8rem;
+    width: auto;
+    max-width: min(88vw, 240px);
   }
 
   .instagram-bottom {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
+    position: absolute;
+    left: 50%;
+    right: auto;
+    bottom: 0.5rem;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
     width: auto;
   }
 
   .services {
-    margin: 1rem;
-    padding: 2rem 1rem;
+    margin: 0.35rem 0.75rem 1rem;
+    padding: 1.1rem 0.85rem 1.25rem;
     border-radius: 24px;
     background-attachment: scroll;
     background:
@@ -1574,17 +1595,25 @@ h1 {
     background-blend-mode: overlay, normal;
   }
 
+  .services .section-heading {
+    margin-bottom: 0.85rem;
+  }
+
   .section-heading {
     margin-bottom: 1.5rem;
   }
 
   .section-heading span {
     font-size: 0.8rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
 
   .section-heading h2 {
     font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+  }
+
+  .services .section-heading h2 {
+    font-size: clamp(1.1rem, 4.5vw, 1.45rem);
   }
 
   .site-header {
