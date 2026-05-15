@@ -1465,9 +1465,9 @@ h1 {
   .services {
     background-attachment: scroll;
     background:
-      linear-gradient(180deg, rgba(248, 247, 247, 0.55), rgba(236, 235, 235, 0.8)),
+      linear-gradient(120deg, rgba(248, 247, 247, 0.55), rgba(236, 235, 235, 0.8)),
       url('background_images/left_background.png') center top / 100% auto no-repeat,
-      #ecebeb;
+      #303030;
     background-blend-mode: overlay, normal;
   }
 
